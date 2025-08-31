@@ -27,7 +27,7 @@ GPIO.output(pinPump, GPIO.LOW)            # turn pump off
 moisture = readData(0)
 
 # write time and current moisture in statistic file
-f = open("/home/pi/WateringStats.txt", "a") 
+f = open("/home/brunocasas/raspberry-watering/WateringStats.txt", "a") 
 currentTime = datetime.datetime.now() 
 f.write(str(currentTime) + ":\n")
 
