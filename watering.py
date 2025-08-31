@@ -15,7 +15,7 @@ def readData(channel):
       return data
 
 pinPump = 4                               # GPIO pin of pump
-needsWater = 630                          # sensor value for dry air
+needsWater = 550                          # sensor value for dry air
 
 # general GPIO settings
 GPIO.setwarnings(False)                   # ignore warnings (unrelevant here)
@@ -37,7 +37,7 @@ f.write("Current moisture: " + str(round((moisture-330) / 450 * 100, 2)) +
 
 # if plants are to dry, start pumping and record the moisture in file
 if moisture > needsWater: 
-    t_end = time.time() + 4               # pump runs 4 seconds
+    t_end = time.time() + 2               # pump runs 4 seconds
     
     # actual pumping
     while (time.time() < t_end):                 
